@@ -108,6 +108,7 @@
                 lang: option.value
             }
             console.log(code);
+            run.innerHTML = `<div class="spinner-border text-secondary" role="status"><span class="sr-only"></span></div>`
             var oData = await fetch("/api/submit", {
                 method: "POST",
                 headers: {
@@ -117,6 +118,7 @@
             })
             const d = await oData.json()
             output.value = d.output
+            run.innerHTML = `<i class="bi bi-play-fill"></i>Run code`
         })
 
         window.onload = async () => {

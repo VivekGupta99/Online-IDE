@@ -6,8 +6,7 @@ const path = require('path');
 require("dotenv").config();
 
 app.use(bodyParser.json());
-
-app.use('/codemirror', express.static(path.join(__dirname, 'node_modules', 'codemirror')));
+app.use('/codemirror', express.static(path.join(__dirname, 'codemirror')));
 
 const database = require('./config/database')
 const codeRunsRouter = require('./routes/codeRuns');
